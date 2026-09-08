@@ -1,0 +1,58 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClearMirror.Core", "src\ClearMirror.Core\ClearMirror.Core.csproj", "{B6FC2E1C-2ED6-4F7F-A691-3E8981974F49}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClearMirror.App", "src\ClearMirror.App\ClearMirror.App.csproj", "{2547C99C-17F0-4D45-A068-7CB285696F43}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClearMirror.SmokeTests", "tests\ClearMirror.SmokeTests\ClearMirror.SmokeTests.csproj", "{3D3DA219-FBE0-4BB7-8241-B755A78349C0}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{43C4C95E-5AF7-4C78-820E-9CC3B2FF8688}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClearMirror.Audio", "src\ClearMirror.Audio\ClearMirror.Audio.csproj", "{203E3104-9A73-437A-8119-F91D1D672B85}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{6AC83C0B-55A5-4160-A5B5-BF7EE6B5FA3C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClearMirror.WifiSmokeTests", "tests\ClearMirror.WifiSmokeTests\ClearMirror.WifiSmokeTests.csproj", "{034E08D9-53AD-4E1E-8944-CC7D51752781}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClearMirror.AudioSmokeTests", "tests\ClearMirror.AudioSmokeTests\ClearMirror.AudioSmokeTests.csproj", "{B03BB227-BDFF-48B0-B918-F3B43299CF93}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B6FC2E1C-2ED6-4F7F-A691-3E8981974F49}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B6FC2E1C-2ED6-4F7F-A691-3E8981974F49}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B6FC2E1C-2ED6-4F7F-A691-3E8981974F49}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B6FC2E1C-2ED6-4F7F-A691-3E8981974F49}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2547C99C-17F0-4D45-A068-7CB285696F43}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2547C99C-17F0-4D45-A068-7CB285696F43}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2547C99C-17F0-4D45-A068-7CB285696F43}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2547C99C-17F0-4D45-A068-7CB285696F43}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3D3DA219-FBE0-4BB7-8241-B755A78349C0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3D3DA219-FBE0-4BB7-8241-B755A78349C0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3D3DA219-FBE0-4BB7-8241-B755A78349C0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3D3DA219-FBE0-4BB7-8241-B755A78349C0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{203E3104-9A73-437A-8119-F91D1D672B85}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{203E3104-9A73-437A-8119-F91D1D672B85}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{203E3104-9A73-437A-8119-F91D1D672B85}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{203E3104-9A73-437A-8119-F91D1D672B85}.Release|Any CPU.Build.0 = Release|Any CPU
+		{034E08D9-53AD-4E1E-8944-CC7D51752781}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{034E08D9-53AD-4E1E-8944-CC7D51752781}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{034E08D9-53AD-4E1E-8944-CC7D51752781}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{034E08D9-53AD-4E1E-8944-CC7D51752781}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B03BB227-BDFF-48B0-B918-F3B43299CF93}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B03BB227-BDFF-48B0-B918-F3B43299CF93}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B03BB227-BDFF-48B0-B918-F3B43299CF93}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B03BB227-BDFF-48B0-B918-F3B43299CF93}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{203E3104-9A73-437A-8119-F91D1D672B85} = {43C4C95E-5AF7-4C78-820E-9CC3B2FF8688}
+		{034E08D9-53AD-4E1E-8944-CC7D51752781} = {6AC83C0B-55A5-4160-A5B5-BF7EE6B5FA3C}
+		{B03BB227-BDFF-48B0-B918-F3B43299CF93} = {6AC83C0B-55A5-4160-A5B5-BF7EE6B5FA3C}
+	EndGlobalSection
+EndGlobal

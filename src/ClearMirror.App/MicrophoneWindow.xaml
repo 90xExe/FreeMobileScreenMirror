@@ -1,0 +1,98 @@
+<Window x:Class="ClearMirror.App.MicrophoneWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="PC microphone · ClearMirror" Width="780" Height="800" MinWidth="650" MinHeight="620"
+        Style="{StaticResource {x:Type Window}}"
+        WindowStartupLocation="CenterOwner" Loaded="Window_Loaded" Closing="Window_Closing">
+    <Grid Margin="24">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <StackPanel Margin="0,0,0,18">
+            <TextBlock Text="PC microphone → phone" FontSize="24" FontWeight="SemiBold" />
+            <TextBlock Text="Audio cable / interface mode · Android 10 and later" Foreground="{StaticResource AccentBrush}" Margin="0,6,0,0" />
+        </StackPanel>
+        <ScrollViewer Grid.Row="1" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Disabled">
+            <StackPanel Margin="0,0,8,0">
+                <Border Style="{StaticResource CardStyle}" Padding="14">
+                    <Grid>
+                        <Grid.ColumnDefinitions><ColumnDefinition /><ColumnDefinition Width="12" /><ColumnDefinition Width="Auto" /></Grid.ColumnDefinitions>
+                        <StackPanel>
+                            <TextBlock Text="PC mic → wired output → phone mic input" FontSize="14" FontWeight="SemiBold" TextWrapping="Wrap" />
+                            <TextBlock Text="Needs a compatible audio interface / attenuated mic cable. Phone and app support varies." TextWrapping="Wrap" Foreground="{StaticResource MutedBrush}" FontSize="11" Margin="0,5,0,0" />
+                        </StackPanel>
+                        <Button Grid.Column="2" Content="Setup guide" Style="{StaticResource SecondaryButton}" Click="Guide_Click" VerticalAlignment="Center" Padding="12,8" />
+                    </Grid>
+                </Border>
+
+                <Border Style="{StaticResource CardStyle}" Margin="0,14,0,0">
+                    <StackPanel>
+                        <TextBlock Text="AUDIO DEVICES" Foreground="{StaticResource AccentBrush}" FontSize="11" FontWeight="Bold" />
+                        <Grid Margin="0,10,0,0">
+                            <Grid.ColumnDefinitions><ColumnDefinition /><ColumnDefinition Width="14" /><ColumnDefinition /></Grid.ColumnDefinitions>
+                            <StackPanel>
+                                <TextBlock Text="PC microphone" Foreground="{StaticResource MutedBrush}" Margin="0,0,0,5" />
+                                <ComboBox x:Name="InputCombo" DisplayMemberPath="DisplayName" ToolTip="{Binding SelectedItem.DisplayName, RelativeSource={RelativeSource Self}}" AutomationProperties.Name="PC microphone" />
+                            </StackPanel>
+                            <StackPanel Grid.Column="2">
+                                <TextBlock Text="Output wired to phone" Foreground="{StaticResource MutedBrush}" Margin="0,0,0,5" />
+                                <ComboBox x:Name="OutputCombo" DisplayMemberPath="DisplayName" ToolTip="{Binding SelectedItem.DisplayName, RelativeSource={RelativeSource Self}}" SelectionChanged="Output_Changed" AutomationProperties.Name="Output wired to phone" />
+                            </StackPanel>
+                        </Grid>
+                        <TextBlock x:Name="OutputHintText" Text="Choose the wired output explicitly. Nothing starts automatically." TextWrapping="Wrap" FontSize="11" Foreground="#F2C879" Margin="0,6,0,0" />
+                        <Grid Margin="0,12,0,0">
+                            <Grid.ColumnDefinitions><ColumnDefinition Width="*" /><ColumnDefinition Width="14" /><ColumnDefinition Width="Auto" /></Grid.ColumnDefinitions>
+                            <StackPanel>
+                                <TextBlock Text="Playback buffer" Foreground="{StaticResource MutedBrush}" FontSize="12" Margin="0,0,0,5" />
+                                <ComboBox x:Name="LatencyCombo" SelectedIndex="1" AutomationProperties.Name="Playback buffer">
+                                    <ComboBoxItem Content="30 ms · Lower latency" Tag="30" />
+                                    <ComboBoxItem Content="60 ms · Balanced" Tag="60" />
+                                    <ComboBoxItem Content="100 ms · More stable" Tag="100" />
+                                </ComboBox>
+                            </StackPanel>
+                            <Button x:Name="RefreshButton" Grid.Column="2" Content="Refresh devices" VerticalAlignment="Bottom" Style="{StaticResource SecondaryButton}" Click="Refresh_Click" />
+                        </Grid>
+                    </StackPanel>
+                </Border>
+
+                <Border Style="{StaticResource CardStyle}" Margin="0,14,0,0">
+                    <StackPanel>
+                        <Grid>
+                            <TextBlock Text="MIC LEVEL" Foreground="{StaticResource AccentBrush}" FontSize="11" FontWeight="Bold" />
+                            <TextBlock x:Name="GainText" Text="Send level: 20%" HorizontalAlignment="Right" Foreground="{StaticResource MutedBrush}" FontSize="12" />
+                        </Grid>
+                        <Slider x:Name="GainSlider" Minimum="0" Maximum="100" Value="20" TickFrequency="5" ValueChanged="Gain_Changed" Margin="0,12,0,8" AutomationProperties.Name="Microphone send level" />
+                        <TextBlock Text="Start low. The send level does not replace a line-to-mic attenuator." Foreground="{StaticResource MutedBrush}" TextWrapping="Wrap" FontSize="11" Margin="0,0,0,10" />
+                        <Grid>
+                            <Grid.ColumnDefinitions><ColumnDefinition Width="90" /><ColumnDefinition /><ColumnDefinition Width="55" /></Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions><RowDefinition /><RowDefinition Height="8" /><RowDefinition /></Grid.RowDefinitions>
+                            <TextBlock Text="PC mic" FontSize="12" />
+                            <ProgressBar x:Name="InputMeter" Grid.Column="1" Maximum="100" Height="10" Foreground="{StaticResource AccentBrush}" AutomationProperties.Name="Microphone input level" />
+                            <TextBlock x:Name="InputDbText" Grid.Column="2" Text="—" FontSize="11" TextAlignment="Right" Foreground="{StaticResource MutedBrush}" />
+                            <TextBlock Grid.Row="2" Text="PC output" FontSize="12" />
+                            <ProgressBar x:Name="OutputMeter" Grid.Row="2" Grid.Column="1" Maximum="100" Height="10" Foreground="{StaticResource AccentBrush}" AutomationProperties.Name="Selected PC output level" />
+                            <TextBlock x:Name="OutputDbText" Grid.Row="2" Grid.Column="2" Text="—" FontSize="11" TextAlignment="Right" Foreground="{StaticResource MutedBrush}" />
+                        </Grid>
+                    </StackPanel>
+                </Border>
+            </StackPanel>
+        </ScrollViewer>
+
+        <StackPanel Grid.Row="2" Margin="0,16,0,0">
+            <Border Background="#13271F" BorderBrush="#245F4C" BorderThickness="1" CornerRadius="8" Padding="12,10" Margin="0,0,0,12">
+                <StackPanel>
+                    <TextBlock x:Name="StatusText" Text="PC mic is off" TextWrapping="Wrap" FontWeight="SemiBold" AutomationProperties.LiveSetting="Polite" />
+                    <TextBlock x:Name="DetailText" Text="The meters show the PC audio path. Verify the phone input in your target app." TextWrapping="Wrap" FontSize="11" Foreground="{StaticResource MutedBrush}" Margin="0,5,0,0" />
+                </StackPanel>
+            </Border>
+            <Grid>
+                <Grid.ColumnDefinitions><ColumnDefinition Width="Auto" /><ColumnDefinition Width="10" /><ColumnDefinition Width="Auto" /><ColumnDefinition Width="*" /></Grid.ColumnDefinitions>
+                <Button x:Name="StartButton" Content="Start PC mic" Style="{StaticResource PrimaryButton}" Click="Start_Click" IsEnabled="False" MinWidth="150" />
+                <Button x:Name="StopButton" Grid.Column="2" Content="Stop mic" Style="{StaticResource DangerButton}" Click="Stop_Click" IsEnabled="False" />
+                <CheckBox x:Name="MuteCheck" Grid.Column="3" Content="Mute mic output" IsEnabled="False" Checked="Mute_Changed" Unchecked="Mute_Changed" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="14,0,0,0" />
+            </Grid>
+        </StackPanel>
+    </Grid>
+</Window>

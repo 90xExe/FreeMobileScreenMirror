@@ -1,0 +1,183 @@
+{
+  "version": 1,
+  "profiles": [
+    {
+      "id": "6b3cc0b126b84fb5992c3930a8569405",
+      "name": "ClearMirror starter",
+      "target_exe": "scrcpy.exe",
+      "target_title_hint": "ClearMirror Preview",
+      "input_mode": "physical",
+      "block_keys": true,
+      "controls": [
+        {
+          "id": "52cd5f38667840e2b02b37db655ea4ff",
+          "kind": "fire",
+          "x": 0.7609375,
+          "y": 0.6580773042616452,
+          "size": 0.12599999999999997,
+          "button": "left",
+          "key": "MOUSE LEFT"
+        },
+        {
+          "id": "029fbef14fcb46c097256198c7fe89d5",
+          "kind": "mouse_look",
+          "x": 0.5859375,
+          "y": 0.5936570862239842,
+          "size": 0.065,
+          "button": "left",
+          "toggle_key": "CTRL",
+          "sensitivity": 0.5
+        },
+        {
+          "id": "3afb55ad32824217820732421bff0614",
+          "kind": "dpad",
+          "x": 0.31302083333333336,
+          "y": 0.8017839444995044,
+          "size": 0.077,
+          "button": "left",
+          "keys": {
+            "up": "W",
+            "left": "A",
+            "down": "S",
+            "right": "D"
+          }
+        },
+        {
+          "id": "712879290e784d99ae4c2d9dc12c5d71",
+          "kind": "tap",
+          "x": 0.8901041666666667,
+          "y": 0.5391476709613479,
+          "size": 0.08200000000000002,
+          "button": "left",
+          "key": "SPACE"
+        },
+        {
+          "id": "d3112deca3d4461384c4df3d9df65754",
+          "kind": "tap",
+          "x": 0.8755208333333333,
+          "y": 0.7978196233894945,
+          "size": 0.08200000000000002,
+          "button": "left",
+          "key": "C"
+        },
+        {
+          "id": "25e71c3623184ae9bf82ee83fdb36b20",
+          "kind": "tap",
+          "x": 0.653125,
+          "y": 0.8186323092170465,
+          "size": 0.08200000000000002,
+          "button": "left",
+          "key": "E"
+        },
+        {
+          "id": "e489123db4654980bf0e83218828da0f",
+          "kind": "tap",
+          "x": 0.7630208333333334,
+          "y": 0.8681863230921705,
+          "size": 0.065,
+          "button": "left",
+          "key": "Z"
+        },
+        {
+          "id": "c18ad5b9f20f487e998ee8a99257a0df",
+          "kind": "tap",
+          "x": 0.640625,
+          "y": 0.5946481665014867,
+          "size": 0.065,
+          "button": "left",
+          "key": "G"
+        },
+        {
+          "id": "746cbda079a2414c986a50185d78c929",
+          "kind": "tap",
+          "x": 0.1609375,
+          "y": 0.7532210109018831,
+          "size": 0.08200000000000002,
+          "button": "left",
+          "key": "F"
+        },
+        {
+          "id": "9b522e560e994cb49fbb84806785bea2",
+          "kind": "tap",
+          "x": 0.07552083333333333,
+          "y": 0.6204162537165511,
+          "size": 0.065,
+          "button": "left",
+          "key": "R"
+        },
+        {
+          "id": "2837b858dc0f425e80471ac5f91a7aa3",
+          "kind": "tap",
+          "x": 0.9322916666666666,
+          "y": 0.4093161546085233,
+          "size": 0.07000000000000002,
+          "button": "left",
+          "key": "G"
+        },
+        {
+          "id": "ba28898e0a5f4b93b8dea0e6ade2d630",
+          "kind": "tap",
+          "x": 0.7744791666666667,
+          "y": 0.17244796828543113,
+          "size": 0.065,
+          "button": "left",
+          "key": "MOUSE WHEEL UP"
+        },
+        {
+          "id": "3a9bb96689a0472d97d376bb444c4ac5",
+          "kind": "tap",
+          "x": 0.7458333333333333,
+          "y": 0.311199207135778,
+          "size": 0.065,
+          "button": "left",
+          "key": "MOUSE WHEEL DOWN"
+        },
+        {
+          "id": "14ce92fe885645bd9a26d26ed8f19dd3",
+          "kind": "tap",
+          "x": 0.840625,
+          "y": 0.29633300297324083,
+          "size": 0.065,
+          "button": "left",
+          "key": "ALT"
+        },
+        {
+          "id": "7409965dbc844e91ac9210c3b955ce77",
+          "kind": "tap",
+          "x": 0.28489583333333335,
+          "y": 0.5807730426164519,
+          "size": 0.08200000000000002,
+          "button": "left",
+          "key": "SHIFT"
+        },
+        {
+          "id": "6b7eb3556cdc441d8e63850aac064ef3",
+          "kind": "tap",
+          "x": 0.3260416666666667,
+          "y": 0.4182358771060456,
+          "size": 0.07000000000000002,
+          "button": "left",
+          "key": "1"
+        },
+        {
+          "id": "5910e49f1941466b90023f174209bfa5",
+          "kind": "tap",
+          "x": 0.28958333333333336,
+          "y": 0.17542120911793854,
+          "size": 0.13,
+          "button": "left",
+          "key": "MOUSE RIGHT"
+        },
+        {
+          "id": "e208a010117f4eb6934431d2d8398be3",
+          "kind": "tap",
+          "x": 0.08802083333333334,
+          "y": 0.3924677898909812,
+          "size": 0.13,
+          "button": "left",
+          "key": "5"
+        }
+      ]
+    }
+  ]
+}

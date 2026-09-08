@@ -1,0 +1,39 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net8.0-windows</TargetFramework>
+    <UseWPF>true</UseWPF>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <AssemblyName>ClearMirror</AssemblyName>
+    <RootNamespace>ClearMirror.App</RootNamespace>
+    <ApplicationManifest>app.manifest</ApplicationManifest>
+    <ApplicationIcon>..\..\assets\clearmirror.ico</ApplicationIcon>
+    <Version>1.1.1</Version>
+    <Company>ClearMirror</Company>
+    <Product>ClearMirror</Product>
+  </PropertyGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ClearMirror.Core\ClearMirror.Core.csproj" />
+    <ProjectReference Include="..\ClearMirror.Audio\ClearMirror.Audio.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="..\..\assets\clearmirror.ico">
+      <Link>Assets\clearmirror.ico</Link>
+    </Resource>
+  </ItemGroup>
+  <ItemGroup Condition="Exists('..\..\tools\scrcpy\scrcpy.exe')">
+    <Content Include="..\..\tools\scrcpy\**\*">
+      <Link>tools\scrcpy\%(RecursiveDir)%(Filename)%(Extension)</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup Condition="Exists('..\..\tools\controls\GamingControlOverlay.exe')">
+    <Content Include="..\..\tools\controls\**\*">
+      <Link>tools\controls\%(RecursiveDir)%(Filename)%(Extension)</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+  </ItemGroup>
+</Project>
